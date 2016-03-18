@@ -29,10 +29,10 @@
 
         // Define the LatLng coordinates for the polygon's path.
         var triangleCoords = [
-          {lat: 47.861668, lng: 35.028089}, //северо запад
-		  {lat: 47.861538, lng: 35.028094}, //юго запад
-		  {lat: 47.861535, lng: 35.026689}, //юго восток
-		  {lat: 47.861661, lng: 35.026689} //северо восток
+          {lat: 47.861668, lng: 35.028089}, //Г±ГҐГўГҐГ°Г® Г§Г ГЇГ Г¤
+		  {lat: 47.861538, lng: 35.028094}, //ГѕГЈГ® Г§Г ГЇГ Г¤
+		  {lat: 47.861535, lng: 35.026689}, //ГѕГЈГ® ГўГ®Г±ГІГ®ГЄ
+		  {lat: 47.861661, lng: 35.026689} //Г±ГҐГўГҐГ°Г® ГўГ®Г±ГІГ®ГЄ
         ];
 		
         // Construct the polygon.
@@ -52,7 +52,7 @@
         });
 
         // Opens the InfoWindow when marker is clicked.
-        marker.addListener('click', function() {
+        bermudaTriangle.addListener('click', function() {
           infoWindow.open(map, marker);
         });
       }
