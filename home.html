@@ -46,26 +46,16 @@
         });
         bermudaTriangle.setMap(map);
 		
-		// Define the LatLng coordinates for the polygon's path.
-        var triangleCoords = [
-          {lat: 47.861967, lng: 35.029285}, //северо запад
-		  {lat: 47.861859, lng: 35.029360}, //юго запад
-		  {lat: 47.861600, lng: 35.028437}, //юго восток
-		  {lat: 47.861715, lng: 35.028373} //северо восток
-        ];
-		
-        // Construct the polygon.
-        var bermudaTriangle = new google.maps.Polygon({
-          paths: triangleCoords,
-          strokeColor: '#00FF00',
-          strokeOpacity: 0.8,
-          strokeWeight: 2,
-          fillColor: '#00FF00',
-          fillOpacity: 0.35
+		// Construct a new InfoWindow.
+        var infoWindow = new google.maps.InfoWindow({
+          content: 'Google Sydney'
         });
-        bermudaTriangle.setMap(map);
+
+        // Opens the InfoWindow when marker is clicked.
+        marker.addListener('click', function() {
+          infoWindow.open(map, marker);
+        });
       }
-	  
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?&callback=initMap">
