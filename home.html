@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple Polygon</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+      // This example creates a simple polygon representing the Bermuda Triangle.
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: {lat: 47.8612146, lng: 35.0281028}
+        });
+
+        // Define the LatLng coordinates for the polygon's path.
+        var triangleCoords = [
+          {lat: 47.861668, lng: 35.028089}, //северо запад
+		  {lat: 47.861538, lng: 35.028094}, //юго запад
+		  {lat: 47.861535, lng: 35.026689}, //юго восток
+		  {lat: 47.861661, lng: 35.026689} //северо восток
+        ];
+		
+        // Construct the polygon.
+        var bermudaTriangle = new google.maps.Polygon({
+          paths: triangleCoords,
+          strokeColor: '#00FF00',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#00FF00',
+          fillOpacity: 0.35
+        });
+        bermudaTriangle.setMap(map);
+		
+		// Define the LatLng coordinates for the polygon's path.
+        var triangleCoords = [
+          {lat: 47.861967, lng: 35.029285}, //северо запад
+		  {lat: 47.861859, lng: 35.029360}, //юго запад
+		  {lat: 47.861600, lng: 35.028437}, //юго восток
+		  {lat: 47.861715, lng: 35.028373} //северо восток
+        ];
+		
+        // Construct the polygon.
+        var bermudaTriangle = new google.maps.Polygon({
+          paths: triangleCoords,
+          strokeColor: '#00FF00',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#00FF00',
+          fillOpacity: 0.35
+        });
+        bermudaTriangle.setMap(map);
+      }
+	  
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?&callback=initMap">
+    </script>
+  </body>
+</html>
